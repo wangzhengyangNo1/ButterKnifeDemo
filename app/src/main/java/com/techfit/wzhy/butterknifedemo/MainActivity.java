@@ -3,8 +3,10 @@ package com.techfit.wzhy.butterknifedemo;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import butterknife.BindColor;
 import butterknife.BindDrawable;
@@ -45,5 +47,23 @@ public class MainActivity extends AppCompatActivity {
         if (mCount > 1) return;
         mTv.setTextColor(mColor);
         mIv.setImageDrawable(mLauncher);
+    }
+
+
+    @OnClick({R.id.btn_start, R.id.btn_pause, R.id.btn_stop})
+    public void func(AppCompatButton pBtn){
+        String _tip = "";
+        switch (pBtn.getId()){
+            case R.id.btn_start:
+                _tip = "start";
+                break;
+            case R.id.btn_pause:
+                _tip = "pause";
+                break;
+            case R.id.btn_stop:
+                _tip = "stop";
+                break;
+        }
+        Toast.makeText(getApplicationContext(), _tip, Toast.LENGTH_SHORT).show();
     }
 }
