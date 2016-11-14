@@ -8,10 +8,13 @@ import android.support.v7.widget.AppCompatImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.List;
+
 import butterknife.BindColor;
 import butterknife.BindDrawable;
 import butterknife.BindString;
 import butterknife.BindView;
+import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -31,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
     Drawable mLauncher;
     @BindView(R.id.iv)
     AppCompatImageView mIv;
+
+    @BindViews({R.id.btn_start, R.id.btn_pause, R.id.btn_stop})
+    List<AppCompatButton> mBtns;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
